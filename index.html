@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ごみ出しカレンダー</title>
+<meta name="description" content="家庭ごみの収集日がすぐ分かる（非公式）">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="theme-color" content="#23724a">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="ごみの日">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="app-head">
+  <div class="app-title">ごみ出しカレンダー</div>
+  <div class="app-sub" id="sub"></div>
+</header>
+
+<main id="view"><p class="loading">読み込み中…</p></main>
+<noscript><p style="padding:16px">このページはJavaScriptを使います。設定でJavaScriptを有効にしてください。</p></noscript>
+
+<nav class="tabs" aria-label="メニュー">
+  <button type="button" class="tab on" data-tab="home"><span class="ti" aria-hidden="true">🏠</span>ホーム</button>
+  <button type="button" class="tab" data-tab="cal"><span class="ti" aria-hidden="true">📅</span>カレンダー</button>
+  <button type="button" class="tab" data-tab="guide"><span class="ti" aria-hidden="true">📖</span>出し方</button>
+</nav>
+
+<script src="logic.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
