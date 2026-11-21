@@ -101,6 +101,7 @@ main { max-width: 560px; margin: 0 auto; padding: 12px 14px 8px; }
 .next-when b { font-size: 1.05rem; }
 .next-in { color: var(--sub); font-size: .85rem; }
 .next-in.soon { color: var(--accent); font-weight: 800; }
+.next-types { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; }
 .next .badge { white-space: normal; border-radius: 18px; }
 a[href^="tel:"] { white-space: nowrap; }
 

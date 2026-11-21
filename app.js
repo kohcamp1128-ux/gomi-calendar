@@ -202,11 +202,17 @@
     var next = L.nextCollections(data, today);
     if (next.length) {
       h += '<section class="card"><h2>次の収集日</h2><ul class="next">';
+      var groups = [];
       next.forEach(function (n) {
-        var d = L.parseKey(n.key);
+        var g = groups.length ? groups[groups.length - 1] : null;
+        if (g && g.key === n.key) g.types.push(n.type);
+        else groups.push({ key: n.key, inDays: n.inDays, types: [n.type] });
+      });
+      groups.forEach(function (g) {
+        var d = L.parseKey(g.key);
         h += '<li><span class="next-when"><b>' + L.fmtMD(d) + '</b>' +
-          '<span class="next-in' + (n.inDays <= 1 ? ' soon' : '') + '">' + L.relLabel(n.inDays) + '</span></span>' +
-          badge(n.type, 'sm', true) + '</li>';
+          '<span class="next-in' + (g.inDays <= 1 ? ' soon' : '') + '">' + L.relLabel(g.inDays) + '</span></span>' +
+          '<span class="next-types">' + g.types.map(function (t) { return badge(t, 'sm', true); }).join('') + '</span></li>';
       });
       h += '</ul></section>';
     }
